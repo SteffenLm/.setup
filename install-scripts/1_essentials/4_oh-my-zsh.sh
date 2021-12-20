@@ -2,7 +2,7 @@
 app_name="oh-my-zsh"
 
 function is_app_already_installed() {
-    USER_HOME=$(eval echo "~$different_user")
+    USER_HOME=$1
     if [ -d "$USER_HOME/.oh-my-zsh" ]; then
         return 1
     else

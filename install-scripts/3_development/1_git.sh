@@ -1,5 +1,5 @@
 #!/bin/bash
-app_name="git"
+app_name="Git"
 
 function is_app_already_installed() {
     if ! command -v git &> /dev/null ; then
