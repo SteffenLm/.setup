@@ -49,6 +49,8 @@ INSTALL_SCRIPTS_DIR="$BASEDIR/install-scripts"
 
 # get user home dir
 USER_HOME=$(eval echo "~$different_user")
+TMP_DIR="$BASEDIR/tmp"
+mkdir "$TMP_DIR"
 
 # get root privilidges
 sudo echo ""
@@ -63,22 +65,25 @@ for app_category_dir in $(find $INSTALL_SCRIPTS_DIR -mindepth 1 -maxdepth 1 -typ
 
     # install all apps inside current category
     echo -e "$BOLD---------   ${app_category_name}   ---------$NC"
-    for install_script in $(find $app_category_dir -mindepth 1 -maxdepth 1 -type f | sort); do
-        source $install_script
+    for install_script_path in $(find "$app_category_dir" -mindepth 1 -maxdepth 1 -type f | sort); do
+        source "$install_script_path"
+
         printInstallationStarted "$app_name"
 
         ## check if already installed
-        is_app_already_installed $USER_HOME &> /dev/null
+        is_app_already_installed &> /dev/null
         if [[ $? == 1 ]]
         then
             ## already installed
             printAlreadyInstalled "$app_name"
         else
             ## install app
-            install_app $USER_HOME &> /dev/null
+            install_app &> /dev/null
             printInstallationResult "$app_name"
         fi
     done
 
     echo ""
 done
+
+rm -rf "$TMP_DIR"

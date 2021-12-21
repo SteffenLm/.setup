@@ -1,5 +1,5 @@
 #!/bin/bash
-app_name="Gnome Extensions"
+export app_name="Gnome Extensions"
 
 function is_app_already_installed() {
     echo "TODO"

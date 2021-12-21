@@ -1,11 +1,16 @@
 #!/bin/bash
-app_name="Google Chrome"
+export app_name="Google Chrome"
 
 function is_app_already_installed() {
-    echo "TODO"
-    return 1
+    if ! command -v google-chrome &> /dev/null; then
+        return 0
+    else
+        return 1
+    fi
 }
 
 function install_app() {
-    echo "TODO"
+    cd "$TMP_DIR" || exit
+    wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    sudo apt install -y ./google-chrome-stable_current_amd64.deb
 }

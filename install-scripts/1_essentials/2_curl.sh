@@ -1,5 +1,5 @@
 #!/bin/bash
-app_name="cURL"
+export app_name="cURL"
 
 function is_app_already_installed() {
     if ! command -v curl &> /dev/null ; then

@@ -1,5 +1,5 @@
 #!/bin/bash
-app_name="Angular CLI"
+export app_name="Angular CLI"
 
 function is_app_already_installed() {
     echo "TODO"

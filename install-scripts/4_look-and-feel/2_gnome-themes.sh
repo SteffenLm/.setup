@@ -1,5 +1,5 @@
 #!/bin/bash
-app_name="Gnome Themes"
+export app_name="Gnome Themes"
 
 function is_app_already_installed() {
     echo "TODO"

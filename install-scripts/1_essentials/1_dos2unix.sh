@@ -1,5 +1,5 @@
 #!/bin/bash
-app_name="dos2unix"
+export app_name="dos2unix"
 
 function is_app_already_installed() {
     if ! command -v dos2unix &> /dev/null

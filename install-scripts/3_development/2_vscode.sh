@@ -1,5 +1,5 @@
 #!/bin/bash
-app_name="Visual Studio Code"
+export app_name="Visual Studio Code"
 
 function is_app_already_installed() {
     echo "TODO"

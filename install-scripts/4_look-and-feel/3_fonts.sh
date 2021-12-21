@@ -1,5 +1,5 @@
 #!/bin/bash
-app_name="Fonts"
+export app_name="Fonts"
 
 function is_app_already_installed() {
     echo "TODO"

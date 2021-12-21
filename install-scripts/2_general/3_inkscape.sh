@@ -1,11 +1,14 @@
 #!/bin/bash
-app_name="InkScape"
+export app_name="InkScape"
 
 function is_app_already_installed() {
-    echo "TODO"
-    return 1
+    if ! command -v inkscape &> /dev/null; then
+        return 0
+    else
+        return 1
+    fi
 }
 
 function install_app() {
-    echo "TODO"
+    sudo apt install -y inkscape
 }

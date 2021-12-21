@@ -1,5 +1,5 @@
 #!/bin/bash
-app_name="zsh"
+export app_name="zsh"
 
 function is_app_already_installed() {
     if ! command -v zsh &> /dev/null ; then

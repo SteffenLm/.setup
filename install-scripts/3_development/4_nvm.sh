@@ -1,5 +1,5 @@
 #!/bin/bash
-app_name="nvm"
+export app_name="nvm"
 
 function is_app_already_installed() {
     echo "TODO"

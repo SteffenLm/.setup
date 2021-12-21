@@ -1,5 +1,5 @@
 #!/bin/bash
-app_name="yarn"
+export app_name="yarn"
 
 function is_app_already_installed() {
     echo "TODO"

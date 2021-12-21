@@ -1,5 +1,5 @@
 #!/bin/bash
-app_name="Wallpapers"
+export app_name="Wallpapers"
 
 function is_app_already_installed() {
     echo "TODO"

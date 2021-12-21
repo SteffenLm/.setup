@@ -1,5 +1,5 @@
 #!/bin/bash
-app_name="JetBrains Toolbox"
+export app_name="JetBrains Toolbox"
 
 function is_app_already_installed() {
     echo "TODO"
