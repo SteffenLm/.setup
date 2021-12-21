@@ -10,5 +10,7 @@ function is_app_already_installed() {
 }
 
 function install_app() {
-    echo "TODO"
+    cd "$TMP_DIR" || exit
+    wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+    sh install.sh
 }

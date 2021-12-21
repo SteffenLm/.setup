@@ -20,14 +20,14 @@ function printInstallationStarted() {
 }
 
 function printAlreadyInstalled() {
-   echo -e "$ERASE_LINE[${YELLOW}✔${NC}] installed $1"
+   echo -e "$ERASE_LINE [${YELLOW}✔${NC}] installed $1"
 }
 
 function printInstallationResult() {
     if [ $? == 0 ]; then
-        echo -e "$ERASE_LINE[${GREEN}✔${NC}] installed $1"
+        echo -e "$ERASE_LINE [${GREEN}✔${NC}] installed $1"
     else 
-        echo -e "$ERASE_LINE[${RED}✘${NC}] failed to install $1"
+        echo -e "$ERASE_LINE [${RED}✘${NC}] failed to install $1"
     fi
 }
 
