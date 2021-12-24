@@ -11,4 +11,7 @@ function is_app_already_installed() {
 
 function install_app() {
     sudo apt install -y zsh
+    
+    # TODO: Set zsh as default shell
+    # ln -sf "$DIR/bashrc" ~/.bashrc
 }
