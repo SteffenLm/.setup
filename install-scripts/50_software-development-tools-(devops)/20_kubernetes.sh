@@ -1,8 +1,8 @@
 #!/bin/bash
-export app_name="yarn"
+export app_name="Kubernetes"
 
 function is_app_already_installed() {
-    if ! command -v yarn &> /dev/null; then
+    if ! command -v kubectl &> /dev/null; then
         return 0
     else
         return 1
@@ -10,5 +10,5 @@ function is_app_already_installed() {
 }
 
 function install_app() {
-    npm install --global yarn
+    echo "TODO"
 }

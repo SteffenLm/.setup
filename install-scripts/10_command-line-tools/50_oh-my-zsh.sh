@@ -20,10 +20,17 @@ function install_app() {
     # add plugin: syntax highlighting
     [ -d ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ] || git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting &> /dev/null
     chmod 711 ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-    # TODO: enable syntax highlighting plugin
+    enablePlugin "zsh-syntax-highlighting"
 
     # add plugin: suggestions
     [ -d ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions ] || git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions &> /dev/null
     chmod 711 ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-    # TODO: enable suggestions plugin
+    enablePlugin "zsh-autosuggestions"
+    
+    enablePlugin "extract"
+}
+
+function enablePlugin() {
+    pluginName=$1
+    sed -i "s/^plugins=(\(.*\))/plugins=(\1 $pluginName)/g" ~/.zshrc
 }
