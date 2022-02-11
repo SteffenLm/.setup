@@ -10,5 +10,7 @@ function is_app_already_installed() {
 }
 
 function install_app() {
-    echo "TODO"
+    cd "$TMP_DIR" || exit
+    wget -O vs-code.deb https://go.microsoft.com/fwlink/?LinkID=760868
+    sudo apt install -y ./vs-code.deb
 }

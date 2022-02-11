@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# TODO:
-#   - writing logs to file
-
 # constants
 BOLD="\033[1;37m" 
 
@@ -16,21 +13,17 @@ ERASE_LINE='\r\033[K'
 
 # helpers
 function printInstallationStarted() {
-    # echo -n "  [ ] installing $1..."
     echo -n "  [ ] $1..."
 }
 
 function printAlreadyInstalled() {
-   # echo -e "$ERASE_LINE  [${YELLOW}✔${NC}] installed $1"
-   echo -e "$ERASE_LINE  [${YELLOW}✔${NC}] $1"
+    echo -e "$ERASE_LINE  [${YELLOW}✔${NC}] $1"
 }
 
 function printInstallationResult() {
     if [ $? == 0 ]; then
-        # echo -e "$ERASE_LINE  [${GREEN}✔${NC}] installed $1"
         echo -e "$ERASE_LINE  [${GREEN}✔${NC}] $1"
     else 
-        # echo -e "$ERASE_LINE  [${RED}✘${NC}] failed to install $1"
         echo -e "$ERASE_LINE  [${RED}✘${NC}] $1"
     fi
 }
@@ -58,11 +51,16 @@ INSTALL_SCRIPTS_DIR="$BASEDIR/install-scripts"
 
 # get user home dir
 USER_HOME=$(eval echo "~$different_user")
+LOG_FILE="$BASEDIR/setup.log"
 TMP_DIR="$BASEDIR/tmp"
 mkdir "$TMP_DIR"
 
 # get root privilidges
 sudo echo ""
+
+# create/empty log file
+date +%s > "$LOG_FILE"
+printf "\n" >> "$LOG_FILE"
 
 for app_category_dir in $(find $INSTALL_SCRIPTS_DIR -mindepth 1 -maxdepth 1 -type d | sort); do
     IFS='/' read -ra path <<< "$app_category_dir"
@@ -75,17 +73,19 @@ for app_category_dir in $(find $INSTALL_SCRIPTS_DIR -mindepth 1 -maxdepth 1 -typ
     for install_script_path in $(find "$app_category_dir" -mindepth 1 -maxdepth 1 -type f | sort); do
         source "$install_script_path"
 
+        printf "\n# Installing %s\n" "$app_name" >> "$LOG_FILE"
         printInstallationStarted "$app_name"
 
         ## check if already installed
-        is_app_already_installed &> /dev/null
+        is_app_already_installed &>> "$LOG_FILE"
         if [[ $? == 1 ]]
         then
             ## already installed
+            printf "already installed\n" >> "$LOG_FILE"
             printAlreadyInstalled "$app_name"
         else
             ## install app
-            install_app &> /dev/null
+            install_app &>> "$LOG_FILE"
             printInstallationResult "$app_name"
         fi
     done
@@ -94,3 +94,9 @@ for app_category_dir in $(find $INSTALL_SCRIPTS_DIR -mindepth 1 -maxdepth 1 -typ
 done
 
 rm -rf "$TMP_DIR"
+
+
+
+# TODO:
+#   - alternatives (script with same nummer)
+#   - logging

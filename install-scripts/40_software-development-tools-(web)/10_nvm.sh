@@ -2,10 +2,10 @@
 export app_name="nvm"
 
 function is_app_already_installed() {
-    if ! command -v nvm &> /dev/null; then
-        return 0
-    else
+    if [ -d "$USER_HOME/.nvm" ]; then
         return 1
+    else
+        return 0
     fi
 }
 
