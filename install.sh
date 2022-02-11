@@ -58,8 +58,8 @@ mkdir "$TMP_DIR"
 # get root privilidges
 sudo echo ""
 
-# create/empty log file
-date +%s > "$LOG_FILE"
+# create empty log file with timestamp
+date > "$LOG_FILE"
 printf "\n" >> "$LOG_FILE"
 
 for app_category_dir in $(find $INSTALL_SCRIPTS_DIR -mindepth 1 -maxdepth 1 -type d | sort); do
@@ -99,4 +99,3 @@ rm -rf "$TMP_DIR"
 
 # TODO:
 #   - alternatives (script with same nummer)
-#   - logging
