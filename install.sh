@@ -13,7 +13,7 @@ LINE_UP="\033[2A"
 
 
 # helpers
-source './select-opts.sh' # TODO: define input
+source './select-opts.sh'
 
 function printInstallationStarted() {
     echo -n "  [ ] $1..."
@@ -152,8 +152,3 @@ for app_category_dir in $(find "$INSTALL_SCRIPTS_DIR" -mindepth 1 -maxdepth 1 -t
 done
 
 rm -rf "$TMP_DIR"
-
-
-
-# TODO:
-#   - alternatives (script with same nummer)
