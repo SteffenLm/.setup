@@ -6,5 +6,5 @@ function is_app_already_installed() {
 }
 
 function install_app() {
-    echo "TODO"
+    return 1; # TODO
 }
