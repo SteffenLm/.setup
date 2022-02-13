@@ -13,4 +13,7 @@ function install_app() {
     cd "$TMP_DIR" || exit
     wget -O vs-code.deb https://go.microsoft.com/fwlink/?LinkID=760868
     sudo apt install -y ./vs-code.deb
+
+    # TODO:
+    #   - install plugins
 }

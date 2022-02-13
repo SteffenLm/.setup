@@ -13,4 +13,7 @@ function install_app() {
     sudo apt-add-repository ppa:agornostal/ulauncher
     sudo apt update
     sudo apt install -y ulauncher
+
+    # TODO:
+    #   - set shortcut to <Alt>+<Space>
 }
