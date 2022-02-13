@@ -21,5 +21,6 @@ function install_app() {
     settings=$(cat "$USER_HOME/.config/ulauncher/settings.json")
     settings=$(echo "$settings" | jq '.["theme-name"] = "dark"')
     settings=$(echo "$settings" | jq '.["hotkey-show-app"] = "<Alt>space"')
+    settings=$(echo "$settings" | jq '.["show-indicator-icon"] = false')
     echo "$settings" > "$USER_HOME/.config/ulauncher/settings.json"
 }
