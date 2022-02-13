@@ -14,6 +14,9 @@ function install_app() {
     sudo apt update
     sudo apt install -y ulauncher
 
-    # TODO:
-    #   - set shortcut to <Alt>+<Space>
+    # adapt config
+    settings=$(cat "$USER_HOME/.config/ulauncher/settings.json")
+    settings=$(echo "$settings" | jq '.["theme-name"] = "dark"')
+    settings=$(echo "$settings" | jq '.["hotkey-show-app"] = "<Alt>space"')
+    echo "$settings" > "$USER_HOME/.config/ulauncher/settings.json"
 }
