@@ -2,6 +2,9 @@
 export app_name="OS Shortcuts"
 
 function is_app_already_installed() {
+    if [[ "$(gsettings get org.gnome.settings-daemon.plugins.media-keys custom-keybindings)" == "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']" ]]; then
+        return 1
+    fi
     return 0
 }
 

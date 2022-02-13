@@ -11,11 +11,11 @@ function is_app_already_installed() {
 }
 
 function install_app() {
-    return 1; # TODO
 
     # install tweaks
     sudo apt update -y
     sudo apt install -y gnome-tweaks
+    return 1; # TODO
 
     # get gnome shell version
     shellVersion=$(gnome-shell --version)
