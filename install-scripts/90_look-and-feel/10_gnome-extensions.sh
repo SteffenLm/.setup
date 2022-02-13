@@ -7,7 +7,7 @@ function is_app_already_installed() {
     fi
 
     # TODO: check if each extension is installed
-    return 0
+    return 1
 }
 
 function install_app() {
