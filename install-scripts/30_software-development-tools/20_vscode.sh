@@ -14,6 +14,11 @@ function install_app() {
     wget -O vs-code.deb https://go.microsoft.com/fwlink/?LinkID=760868
     sudo apt install -y ./vs-code.deb
 
-    # TODO:
-    #   - install plugins
+    # install plugins
+    code --install-extension Angular.ng-template
+    code --install-extension eamodio.gitlens
+    code --install-extension ecmel.vscode-html-css
+    code --install-extension k--kato.intellij-idea-keybindings
+    code --install-extension timonwong.shellcheck
+    code --install-extension codemooseus.vscode-devtools-for-chrome
 }
