@@ -2,7 +2,7 @@
 
 # Download scripts
 wget https://github.com/ISchwarz23/.setup/archive/refs/heads/ubuntu.zip
-sudo apt-get install -y unzip
+sudo apt-get install -y unzip > /dev/null
 unzip ubuntu.zip -d .setup
 rm ubuntu.zip
 
