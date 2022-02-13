@@ -13,8 +13,6 @@ LINE_UP="\033[2A"
 
 
 # helpers
-source './select-opts.sh'
-
 function printInstallationStarted() {
     echo -n "  [ ] $1..."
 }
@@ -83,6 +81,9 @@ export USER_HOME=$(eval echo "~$different_user")
 export LOG_FILE="$BASEDIR/setup.log"
 export TMP_DIR="$BASEDIR/tmp"
 mkdir -p "$TMP_DIR"
+
+# load select opts function
+source "$BASEDIR/select-opts.sh"
 
 # get root privilidges
 sudo echo ""
