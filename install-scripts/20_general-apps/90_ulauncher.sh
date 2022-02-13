@@ -14,6 +14,9 @@ function install_app() {
     sudo apt update
     sudo apt install -y ulauncher
 
+    ulauncher &
+    ulauncher-toggle
+
     # adapt config
     settings=$(cat "$USER_HOME/.config/ulauncher/settings.json")
     settings=$(echo "$settings" | jq '.["theme-name"] = "dark"')
