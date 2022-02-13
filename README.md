@@ -2,5 +2,5 @@
 
 To run the setup just execute the following line:
 ```bash
-sh -c "$(wget -O- https://raw.githubusercontent.com/ischwarz23/.setup/master/install.sh)"
+bash <(wget -qO- https://raw.githubusercontent.com/ischwarz23/.setup/master/install.sh)
 ```
