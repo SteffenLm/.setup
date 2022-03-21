@@ -14,6 +14,7 @@ function install_app() {
 
     # set default config
     git config --global push.default matching
+    git config --global pull.rebase true
     git config --global branch.autosetuprebase always
     git config --global status.short true
     git config --global alias.last "log -1 --stat"
