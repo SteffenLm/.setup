@@ -22,4 +22,5 @@ function install_app() {
     code --install-extension timonwong.shellcheck
     code --install-extension codemooseus.vscode-devtools-for-chrome
     code --install-extension yzhang.markdown-all-in-one
+    code --install-extension asciidoctor.asciidoctor-vscode
 }
