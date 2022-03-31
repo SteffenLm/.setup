@@ -11,8 +11,11 @@ function is_app_already_installed() {
 
 function install_app() {
     cd "$TMP_DIR" || exit
+    
+    # install zsh
+    sudo apt -y install zsh
 
-    # install
+    # install oh-my-zsh
     curl -Lo install-zsh.sh https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh &> /dev/null
     sh install-zsh.sh --unattended &> /dev/null
     rm -f install-zsh.sh
