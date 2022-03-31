@@ -12,7 +12,7 @@ function is_app_already_installed() {
 function install_app() {
     cd "$TMP_DIR" || exit;
     wget -O jetbrains-toolbox.tar.gz "https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.22.10970.tar.gz"
-    extract jetbrains-toolbox.tar.gz
+    tar -xf jetbrains-toolbox.tar.gz
     rm jetbrains-toolbox.tar.gz
 
     mv jetbrains-toolbox* jetbrains-toolbox
