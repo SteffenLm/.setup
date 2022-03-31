@@ -10,7 +10,7 @@ function is_app_already_installed() {
 }
 
 function install_app() {
-    sudo apt-add-repository -y ppa:agornostal/ulauncher
+    sudo add-apt-repository -y ppa:agornostal/ulauncher
     sudo apt update
     sudo apt install -y ulauncher
 
