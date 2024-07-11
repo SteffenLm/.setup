@@ -1,5 +1,5 @@
 #!/bin/bash
-export app_name="Kubernetes"
+export app_name="kubectl"
 
 function is_app_already_installed() {
     if ! command -v kubectl &> /dev/null; then
