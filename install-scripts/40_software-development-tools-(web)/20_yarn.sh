@@ -10,5 +10,7 @@ function is_app_already_installed() {
 }
 
 function install_app() {
-    npm install --global yarn
+    sudo npm install -g corepack
+    sudo corepack enable
+    corepack prepare yarn@stable --active 
 }

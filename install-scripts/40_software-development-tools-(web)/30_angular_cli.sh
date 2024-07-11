@@ -10,6 +10,6 @@ function is_app_already_installed() {
 }
 
 function install_app() {
-    npm install -g @angular/cli
+    yarn global add @angular/cli
     ng config -g cli.packageManager yarn
 }
